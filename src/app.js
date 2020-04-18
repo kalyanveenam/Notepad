@@ -1,0 +1,6 @@
+const express= require('express')
+const app=express()
+const routes=require('../routes/users')
+app.use(routes)
+app.set('view engine', 'hbs')
+app.listen('8000',console.log('app is up and running'))
