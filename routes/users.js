@@ -1,10 +1,29 @@
 const express= require('express')
-const router=express.Router()
-
-router.get('/users',(req,res)=>{
+const User=require('../src/models/usermodel')
+//const router=express.Router()
+const app=express()
+app.use(express.json())
+app.get('/users',(req,res)=>{
     res.render('login')
 })
-router.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
+   
     res.send('namaste')
 })
-module.exports=router
+app.post('/users',(req,res)=>{
+    const reqbody=req.body
+    console.log('reqbody')
+    console.log(req.body)
+    const user1= new User(
+        
+         reqbody   
+        )
+        user1.save().then(()=>{
+            console.log(user1)
+        }).catch((error)=>{
+            console.log(error)
+        })
+
+    res.send(user1) 
+})
+module.exports=app
