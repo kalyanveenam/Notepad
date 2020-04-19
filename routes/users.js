@@ -4,12 +4,13 @@ const User=require('../src/models/usermodel')
 const app=express()
 app.use(express.json())
 app.get('/users',(req,res)=>{
-    res.render('login')
+    User.find({}).then((User)=>{
+        res.send(User);
+         }).catch((error)=>{
+        res.send(error)
+         })
 })
-app.get('/',(req,res)=>{
-   
-    res.send('namaste')
-})
+
 app.post('/users',(req,res)=>{
     const reqbody=req.body
     console.log('reqbody')
@@ -25,5 +26,12 @@ app.post('/users',(req,res)=>{
         })
 
     res.send(user1) 
+})
+app.get('/users/:id',(req,res)=>{
+    const _id=req.params.id
+    User.findById(_id).then((user)=>{
+        res.send(user)
+        res.render('')
+    }).catch((error)=>{res.send(error)})
 })
 module.exports=app

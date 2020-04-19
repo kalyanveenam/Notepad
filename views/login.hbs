@@ -1,18 +1,50 @@
-<form action="" method="post">
+<!DOCTYPE html>
+<head>
+<title>Notes App</title>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script type="text/javascript">
+// $(document).ready(()=>{
+// //console.log('hello browser');
+// $('#submit').click(()=>{
+//  $.ajax({
+// url:"users/",
+// type: 'GET',
+// dataType: 'json',
+// success: (data) =>{
+//   console.log('ajaz success',data)
+// }
+
+//  });
+// })
+// });
+// methodSubmitted = ()=>
+// {
+//   console.log('submitted '+location.search);
+// }
+</script>
+</head>
+<body>
+<form > 
  
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
+    <input type="text" placeholder="Enter Username" id="uname" required/>
+    <label for="psw"><b>Age</b></label>
+    <input type="text" id="age" required/>
+    <button type="submit" id="submit">Login</button>
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
 </form>
+<div id='status'>
+  
+  <ul>
+    <li>list1</li>
+    <li>list2</li>
+
+  </ul>
+</div>
+<div id='status2'></div>
+<script src='../static/js/index.js'></script> 
+
+
+</body>
+
