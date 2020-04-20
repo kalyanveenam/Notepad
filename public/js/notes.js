@@ -40,36 +40,48 @@ fetch('/notes',{
     headers: {
         'Content-Type': 'application/json;charset=utf-8'
       },
-
-
 }).then(function(data){
+
 data.json().then((data)=>{
+
+var notes_data ={};
+notes_data.notes = data;
+var data=notes_data
+console.log('data')
 console.log(data)
+var note_data='<ol> {{#each notes}}<li>{{title}}</li><li>{{note}}</li>{{/each}}</ol>';
+var tpt=Handlebars.compile(note_data)
+console.log(tpt)
+var note_dt=tpt(data)
+console.log('test')
+console.log(note_dt)
+document.getElementById("notes").innerHTML=note_dt;
+
 })
 }).catch((error)=>{
     console.log(error)
 })
 
 })
-// var data='<p> city is {{city}}';
-// //var data=document.getElementById("entry-template").innerHTML
-// var template=Handlebars.compile(data)
 
-// var data=template({city:'hyderabad'})
-
-// document.getElementById("entry-template").innerHTML=data;
-
-var note_data='<ol> {{#each quotes}}<li>{{quote}}</li>{{/each}}</ol>';
+//var note_data='<ol> {{#each notes}}<li>{{title}}</li><li>{{note}}</li>{{/each}}</ol>';
 //var note_data=document.getElementById("notes").innerHTML;
-console.log('test2'+note_data)
-var tpt=Handlebars.compile(note_data)
-var quote_data=tpt(
+//console.log('test2'+note_data)
+//var tpt=Handlebars.compile(note_data)
+// var quote_data=tpt(
     {
-    quotes:[
-    {"quote":"quote1"},
-    {"quote":"quote2"},
-    {"quote":"quote3"}
+    notes:[
+    {"title":"titlevalue",
+     "note":"note value"
+},
+    {"title":"titlevalue",
+    "note":"note value"
+},
+    {"title":"titlevalue",
+    "note":"note value"
+}
     ]     
-})
-console.log('temp1'+quote_data)
-document.getElementById("notes").innerHTML+=quote_data;
+}
+//)
+// console.log('temp1'+quote_data)
+// document.getElementById("notes").innerHTML+=quote_data;
