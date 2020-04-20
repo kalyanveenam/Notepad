@@ -16,3 +16,7 @@ Eg: var temp=Handlebars.compile(tempStructure)
 Eg: var data=temp({data:"hi"});
 5. now data has updated html embedded with data provided in step 4. add innerHtml.
 
+css:
+
+padding is boundary of that element
+display:block to block other elements in line

@@ -10,27 +10,25 @@
 <body>
   <form>
  
-    <label for="title"><b>title</b></label>
+    <label for="title" class='title-text'><b>Title</b></label>
     <input type="text" placeholder="Title for your notes" id="title-note" required>
 
-    <label for="note"><b>Type your notes here</b></label>
-    <input type="text" placeholder="Start typing" id="note" required>
+  
+    <input type="text" placeholder="Start typing....." id="note" required>
 
     <button type="button" id='submit-note'>send</button>
     <button type="button" id='getnotes'>Get notes</button>
     <div id='data-notes'></div>
 
 
-<div id='entry-template'>
-    <p> city is {{city}}</p>
-</div>
 <div id='notes'>
 
 </div>
 </form>
 
-
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 <script src='../static/js/notes.js' ></script> 
+
 </body>
 
 </html>
