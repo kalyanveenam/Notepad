@@ -51,4 +51,25 @@ console.log(data)
 })
 
 })
+// var data='<p> city is {{city}}';
+// //var data=document.getElementById("entry-template").innerHTML
+// var template=Handlebars.compile(data)
 
+// var data=template({city:'hyderabad'})
+
+// document.getElementById("entry-template").innerHTML=data;
+
+var note_data='<ol> {{#each quotes}}<li>{{quote}}</li>{{/each}}</ol>';
+//var note_data=document.getElementById("notes").innerHTML;
+console.log('test2'+note_data)
+var tpt=Handlebars.compile(note_data)
+var quote_data=tpt(
+    {
+    quotes:[
+    {"quote":"quote1"},
+    {"quote":"quote2"},
+    {"quote":"quote3"}
+    ]     
+})
+console.log('temp1'+quote_data)
+document.getElementById("notes").innerHTML+=quote_data;

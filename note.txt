@@ -3,3 +3,16 @@
 3. install nodemon, hbs
 4.create a user route 
 /Users/kalyanchakravarthi/Desktop/mongodb/bin/mongod --dbpath=/Users/kalyanchakravarthi/Desktop/mongb-data
+
+
+handlebar templates: 
+1.first add handlebars script link below in your html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+2.create a template containing handlebars and assign it to a variable 
+Eg: var tempstructure='<p>{{data}}</p>'
+3.compile the template
+Eg: var temp=Handlebars.compile(tempStructure)
+4. data data for this variable containing template
+Eg: var data=temp({data:"hi"});
+5. now data has updated html embedded with data provided in step 4. add innerHtml.
+
