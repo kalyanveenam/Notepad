@@ -1,8 +1,6 @@
 body{
- background-color: #ededed;   
+ background-color: black   
 }
-
-
 
 #title-note{
     width: 50%;
@@ -31,80 +29,76 @@ body{
     display: block;   
 }
 #submit-note{
-    padding: 20px;
-	box-shadow:inset 0px 14px 15px 3px #23395e;
-	background-color:transparent;
-	border:1px solid #1f2f47;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Verdana;
-	font-size:14px;
-	font-style:italic;
-	padding:6px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 16px #263666;
+	color: white;
+	font-size: 20px;
+	font-family: helvetica;
+	text-decoration: none;
+	border: 2px solid white;
+	border-radius: 20px;
+	transition-duration: .2s;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
+	background-color: black;
+	padding: 4px 30px;
 }
-#getnotes{
-    padding-bottom: 20px;
-    box-shadow:inset 0px 14px 15px 3px #23395e;
-	background-color:transparent;
-	border:1px solid #1f2f47;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Verdana;
-	font-size:14px;
-	font-style:italic;
-	padding:6px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 16px #263666; 
-}
-#notes{
-    background-color: #F7F7FA;
-    max-height: 750px;
-    display: flex;
-    
-    flex-direction: column;
-    overflow-y: scroll;
-    max-height: 290px;
-    border: 1px solid white;
-    padding: 40px;
-    padding-left: 0%;
-    position: absolute;
- 
-  width: 50%;
-}
-.note-template{
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	background-color:#ededed;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#777777;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+#submit-note:hover {
+	color: black;
+	background-color: rgb(33, 36, 172);
+	transition-duration: .2s;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
+  }
 
+#getnotes{
+	color: white;
+	font-size: 20px;
+	font-family: helvetica;
+	text-decoration: none;
+	border: 2px solid white;
+	border-radius: 20px;
+	transition-duration: .2s;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
+	background-color: black;
+	padding: 4px 30px;
 }
+#getnotes:hover {
+	color: black;
+	background-color: white;
+	transition-duration: .2s;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
+  }
+ #notes{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: #283449;
+	overflow-y: scroll;
+	padding: 10px;
+	max-height: 450px;
+
+} 
+
+
 .title-template{
-    	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	background-color:#ffffff;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+	background-color:rgb(167, 165, 49);
+	border: 2px solid rgb(184, 174, 174);
+	padding: 120px;
+	font-size: 30px;
+	text-align: center;
+	font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 400;
+  font-family: fantasy;
+}
+.title-template:hover{
+	background-color:rgb(255, 251, 13);
+	border: 2px solid rgb(184, 174, 174);
+	padding: 120px;
+	font-size: 30px;
+	text-align: center;
+	font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 400;
+  font-family: fantasy;
 }

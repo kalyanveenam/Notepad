@@ -49,7 +49,7 @@ notes_data.notes = data;
 var data=notes_data
 console.log('data')
 console.log(data)
-var note_data='{{#each notes}}<div class=title-template>{{title}}</div><div class=note-template>{{note}}</div>{{/each}}';
+var note_data='{{#each notes}}<div class=title-template><b>{{title}}</b>: {{note}}</div>{{/each}}';
 var tpt=Handlebars.compile(note_data)
 console.log(tpt)
 var note_dt=tpt(data)
