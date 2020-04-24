@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<title>Notes App</title>
+<script src='../static/handlebars-v4.7.6.js'></script>  
+</head>
+<body>
+  <form>
+    <input type="text" placeholder="Give me some title" id="input-title" required>
+    <input type="text" placeholder="Start typing....." id="input-body" required>
+    <button type="button" id='btn-addNote'>send</button>
+    <button type="button" id='btn-getNote'>Get notes</button>
+    <div id='div-msg'></div>
+
+<script type="text/x-handlebars-template" id="temp-getData">
+
+{{#each notes}}
+<div class=title-template>
+<b>{{title}}</b>: {{note}}
+</div>
+{{/each}}
+</script>
+
+<div id='div-dispNote'>
+</div>
+
+</form>
+
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+</body>
+<script src='../static/js/notes.js' ></script> 
+
+</html>

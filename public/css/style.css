@@ -1,9 +1,9 @@
-body{
- background-color: black   
+body {
+  background-color: black;
 }
 
-#title-note{
-    width: 50%;
+#input-title {
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -11,93 +11,102 @@ body{
   border-radius: 4px;
   box-sizing: border-box;
   display: block;
+  border-radius: 10px;
 }
-.title-text{
-    font-family: Arial, Helvetica, sans-serif;
+#input-title:hover{
+	background-color: rgb(217, 235, 55);
 }
-.note-text{
-    display: block;
+#input-body {
+  width: 50%;
+  padding: 22px 30px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 10px;
 }
-#note{
-    width: 50%;
-    padding: 22px 30px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    display: block;   
+#input-body:hover {
+  width: 50%;
+  padding: 22px 30px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(148, 161, 31);
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 10px;
+  background-color: rgb(216, 250, 21);
 }
-#submit-note{
-	color: white;
-	font-size: 20px;
-	font-family: helvetica;
-	text-decoration: none;
-	border: 2px solid white;
-	border-radius: 20px;
-	transition-duration: .2s;
-	-webkit-transition-duration: .2s;
-	-moz-transition-duration: .2s;
-	background-color: black;
-	padding: 4px 30px;
+#btn-getNote {
+  color: white;
+  font-size: 20px;
+  font-family: helvetica;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  background-color: black;
+  padding: 4px 30px;
 }
-#submit-note:hover {
-	color: black;
-	background-color: rgb(33, 36, 172);
-	transition-duration: .2s;
-	-webkit-transition-duration: .2s;
-	-moz-transition-duration: .2s;
-  }
+#btn-getNote:hover {
+  color: black;
+  background-color: rgb(33, 36, 172);
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+}
 
-#getnotes{
-	color: white;
-	font-size: 20px;
-	font-family: helvetica;
-	text-decoration: none;
-	border: 2px solid white;
-	border-radius: 20px;
-	transition-duration: .2s;
-	-webkit-transition-duration: .2s;
-	-moz-transition-duration: .2s;
-	background-color: black;
-	padding: 4px 30px;
+#btn-addNote {
+  color: white;
+  font-size: 20px;
+  font-family: helvetica;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  background-color: black;
+  padding: 4px 30px;
 }
-#getnotes:hover {
-	color: black;
-	background-color: white;
-	transition-duration: .2s;
-	-webkit-transition-duration: .2s;
-	-moz-transition-duration: .2s;
-  }
- #notes{
-	display: grid;
-	grid-template-columns: auto auto auto;
-	background-color: #283449;
-	overflow-y: scroll;
-	padding: 10px;
-	max-height: 450px;
+#btn-addNote:hover {
+  color: black;
+  background-color: white;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+}
+#div-dispNote {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #283449;
+  overflow-y: scroll;
+  padding: 10px;
+  max-height: 450px;
+}
 
-} 
-
-
-.title-template{
-	background-color:rgb(167, 165, 49);
-	border: 2px solid rgb(184, 174, 174);
-	padding: 120px;
-	font-size: 30px;
-	text-align: center;
-	font-family: 'Reenie Beanie';
+.title-template {
+  background-color: rgb(167, 165, 49);
+  border: 2px solid rgb(184, 174, 174);
+  padding: 120px;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Reenie Beanie";
   font-style: normal;
   font-weight: 400;
   font-family: fantasy;
 }
-.title-template:hover{
-	background-color:rgb(255, 251, 13);
-	border: 2px solid rgb(184, 174, 174);
-	padding: 120px;
-	font-size: 30px;
-	text-align: center;
-	font-family: 'Reenie Beanie';
+.title-template:hover {
+  background-color: rgb(255, 251, 13);
+  border: 2px solid rgb(184, 174, 174);
+  padding: 120px;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Reenie Beanie";
   font-style: normal;
   font-weight: 400;
   font-family: fantasy;

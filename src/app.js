@@ -14,7 +14,7 @@ res.render('login')
 //res.sendFile(indexpath + 'index.html')
 })
 app.get('/notespage',(req,res)=>{
-    res.render('notes')
+    res.sendFile(indexpath + 'note.html')
 })
 
 app.listen('8000',console.log('app is up and running'))
