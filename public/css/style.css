@@ -111,3 +111,6 @@ body {
   font-weight: 400;
   font-family: fantasy;
 }
+#div-delNote{
+  display: none;
+}

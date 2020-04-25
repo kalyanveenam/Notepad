@@ -11,20 +11,27 @@
     <button type="button" id='btn-getNote'>Get notes</button>
     <div id='div-msg'></div>
 
+
 <script type="text/x-handlebars-template" id="temp-getData">
 
 {{#each notes}}
-<div class=title-template>
+<div  class=title-template>
 <b>{{title}}</b>: {{note}}
+<div id='div-delNote' >{{_id}}</div>
+
 </div>
+
 {{/each}}
+
+
 </script>
+
 
 <div id='div-dispNote'>
 </div>
 
 </form>
-
+<button type="button" id='btn-delNote'>Delete</button>
 <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
 </body>

@@ -37,4 +37,13 @@ app.get('/notes/:id',(req,res)=>{
         res.send(note)
     }).catch((error)=>{res.send(error)})
 })
+
+app.delete('/notes',(req,res)=>{
+const _id=req.body
+console.log(_id)
+Note.deleteOne({_id:_id}).then((note)=>{
+    res.status(200).send('Deleted')
+}).catch((error)=>{res.send(error)})
+
+})
 module.exports=app
