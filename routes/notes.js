@@ -38,9 +38,10 @@ app.get('/notes/:id',(req,res)=>{
     }).catch((error)=>{res.send(error)})
 })
 
-app.delete('/notes',(req,res)=>{
-const _id=req.body
+app.delete('/notes/delete/:id',(req,res)=>{
+const _id=req.params.id;
 console.log(_id)
+res.send('success')
 Note.deleteOne({_id:_id}).then((note)=>{
     res.status(200).send('Deleted')
 }).catch((error)=>{res.send(error)})

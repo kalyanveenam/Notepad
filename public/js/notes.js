@@ -4,9 +4,9 @@ var btn_submit = document.getElementById("btn-addNote");
 const btn_getNotes = document.getElementById("btn-getNote");
 const div_notes = document.getElementById("div-msg");
 const btn_delete = document.getElementById("btn-delNote");
-
-
-
+Handlebars.registerHelper("data", function (property) {
+  return property;
+});
 
 btn_submit.addEventListener("click", function (e) {
   const title = input_title.value;
@@ -44,35 +44,38 @@ btn_getNotes.addEventListener("click", function (e) {
         var note_data = document.getElementById("temp-getData").innerHTML;
         var template = Handlebars.compile(note_data);
         var note_dt = template(data);
-        console.log(data)
+        console.log(data);
+        $(document).ready(function () {
+          $(".view-details").on("click", function (e) {
+            e.preventDefault();
+            console.log("clicked");
+          });
+        });
         document.getElementById("div-dispNote").innerHTML = note_dt;
-      const data_id=   document.getElementById("div-dispNote").innerHTML;
-      console.log(data_id)
-                 });
+        const data_id = document.getElementById("div-dispNote").innerHTML;
+        console.log(data_id);
+      });
     })
     .catch((error) => {
       console.log(error);
     });
 });
- 
 
+document.getElementById("btn-delNote").addEventListener("click", function (e) {
+  const data = {
+    _id: "5e9da08ea8063d29b360a8bd",
+  };
 
-  document.getElementById("btn-delNote").addEventListener("click", function (e) {
-      const data = {
-        _id: "5e9da08ea8063d29b360a8bd",
-      };
-
-      fetch("/notes", {
-        method: "delete",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify(data),
-      }).then((req, res) => {
-        console.log("Note is deleted");
-      });
-    });
- document.getElementById("div-dispNote").addEventListener('click',function(){
-     
-console.log('clicked')
- });
+  fetch("/notes", {
+    method: "delete",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(data),
+  }).then((req, res) => {
+    console.log("Note is deleted");
+  });
+});
+document.getElementById("div-dispNote").addEventListener("click", function () {
+  console.log("clicked");
+});

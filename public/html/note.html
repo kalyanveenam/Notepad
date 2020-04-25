@@ -2,6 +2,8 @@
 <head>
 <title>Notes App</title>
 <script src='../static/handlebars-v4.7.6.js'></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
   <form>
@@ -15,14 +17,15 @@
 <script type="text/x-handlebars-template" id="temp-getData">
 
 {{#each notes}}
+
 <div  class=title-template>
 <b>{{title}}</b>: {{note}}
+{{data _id}}
 <div id='div-delNote' >{{_id}}</div>
-
+<a href="/users/delete/{{_id}}" class='button viewdetails'>View Details</a>
 </div>
 
 {{/each}}
-
 
 </script>
 
