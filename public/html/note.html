@@ -17,16 +17,13 @@
 <script type="text/x-handlebars-template" id="temp-getData">
 
 {{#each notes}}
+<div  class=title-template onclick='getIdOnClick("{{_id}}")' id ="hey">
 
-<div  class=title-template>
+ 
 <b>{{title}}</b>: {{note}}
-{{data _id}}
-<div id='div-delNote' >{{_id}}</div>
-<a href="/users/delete/{{_id}}" class='button viewdetails'>View Details</a>
+
 </div>
-
 {{/each}}
-
 </script>
 
 
@@ -35,9 +32,11 @@
 
 </form>
 <button type="button" id='btn-delNote'>Delete</button>
+<button type="button" id='btn-refNote'>Refresh</button>
+<div id='div-dummy' class="div-dummy"></div>
 <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-
+<script src='../static/js/notes.js'></script>
 </body>
-<script src='../static/js/notes.js' ></script> 
+
 
 </html>
