@@ -136,6 +136,7 @@ body {
 
   background-color: rgb(255, 251, 13);
   border: 2px solid rgb(184, 174, 174);
+  -webkit-transform: scale(1.2);
   padding: 120px;
   font-size: 30px;
   text-align: center;
