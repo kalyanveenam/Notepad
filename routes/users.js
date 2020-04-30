@@ -5,14 +5,17 @@ const auth=require('../src/middleware/auth')
 const app=express()
 app.use(express.json())
 app.get('/users/me',auth, async (req,res)=>{
+    try{
 
 res.send(req.user)
-
-//    await User.find({}).then((User)=>{
-//         res.send(User);
-//          }).catch((error)=>{
-//         res.send(error)
-//          })
+if(req.user=null){
+    throw new Error();
+    
+}
+    }
+    catch(e){
+        res.status(404).send()
+    }
 })
 app.post('/users/login', async (req,res)=>{
     try{
@@ -20,7 +23,7 @@ app.post('/users/login', async (req,res)=>{
     console.log('getuser')
     console.log(getuser)
    const token=await getuser.generateToken();
-     res.send({getuser, token})
+        res.send({ user:getuser.getPublicProfile(), token})
     }
     catch(e){
 res.status(404).send()
@@ -63,6 +66,29 @@ res.send(user)
 }
 catch(e){
 res.status(400).send()
+}
+})
+
+app.post('/users/logout', auth,async (req,res)=>{
+
+  req.user.tokens=req.user.tokens.filter((tokens)=>{
+
+return tokens.token!==req.token;
+
+  })  
+  await req.user.save();
+res.send();
+
+})
+app.post('/users/logoutAll', auth, async (req, res)=>{
+try{
+req.user.tokens=[];
+await req.user.save()
+res.send()
+}
+catch(e){
+res.status(404).send()
+
 }
 })
 module.exports=app

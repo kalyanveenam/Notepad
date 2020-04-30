@@ -53,7 +53,16 @@ userSchema.methods.generateToken = async function (){
 
   return token;
 };
+userSchema.methods.getPublicProfile =  function(){
+    const user = this;
+ const userObject= user.toObject()
+ console.log('user obj');
 
+  delete userObject.password;
+  delete userObject.tokens;
+  console.log(userObject)
+  return userObject;
+}
 
 
 const User=mongoose.model('User',userSchema)

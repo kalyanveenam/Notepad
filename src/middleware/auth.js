@@ -13,6 +13,9 @@ try{
     const user = await User.findOne({ _id: decoded._id,'tokens.token': token })
     console.log(user)
     req.user=user;
+    req.token=token;
+
+    next()
 
 }
 catch(e){
@@ -22,7 +25,6 @@ res.status(404).send('Please Authenticate')
 
 
 
-next()
 
 }
 
