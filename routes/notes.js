@@ -1,24 +1,31 @@
 const express= require('express')
+const auth= require('../src/middleware/auth')
 const Note=require('../src/models/notemodel')
 //const router=express.Router()
 const app=express()
 app.use(express.json())
-app.get('/notes',(req,res)=>{
-    Note.find({}).then((Note)=>{
-   res.send(Note);
-    }).catch((error)=>{
+app.get('/notes',auth,(req,res)=>{
+    try{
+    req.user.populate('notes').execPopulate()
+    res.send(req.user.notes)
+
+    }
+    
+    catch(e){
    res.render(error)
-    })
+    }
   
 })
 
-app.post('/notes',(req,res)=>{
+app.post('/notes',auth ,(req,res)=>{
     const reqbody=req.body
     console.log('reqbody')
     console.log(req.body)
     const note1= new Note(
-        
-         reqbody   
+        {
+         ...reqbody,
+         owner: req.user._id   
+        }
         )
         note1.save().then(()=>{
             console.log(note1)

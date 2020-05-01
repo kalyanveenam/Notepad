@@ -63,6 +63,13 @@ userSchema.methods.getPublicProfile =  function(){
   console.log(userObject)
   return userObject;
 }
+userSchema.virtual('notes', {
+
+  ref:'Note',
+  localField:'_id',
+  foreignField:'owner'
+
+})
 
 
 const User=mongoose.model('User',userSchema)

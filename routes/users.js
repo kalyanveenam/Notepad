@@ -48,12 +48,11 @@ app.get('/users/:id',async (req,res)=>{
     }).catch((error)=>{res.send(error)})
 })
 
-app.patch('/users/:id', async (req,res)=>{
-    const _id=req.params.id;
-    console.log(_id)
+app.patch('/users/me', auth,async (req,res)=>{
+   
 const updates=Object.keys(req.body);
 try{
-const user= await User.findById(_id);
+const user= await User.findById(req.user._id);
 updates.forEach((update)=>{ user[update]=req.body[update]
       user.save()
 
@@ -90,5 +89,17 @@ catch(e){
 res.status(404).send()
 
 }
+})
+app.delete('/users/delete', auth, async (req, res)=>{
+try{
+
+await req.user.remove()
+res.send()
+}
+catch(e){
+
+res.status(404).send()
+}
+
 })
 module.exports=app
