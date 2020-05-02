@@ -4,9 +4,10 @@ const Note=require('../src/models/notemodel')
 //const router=express.Router()
 const app=express()
 app.use(express.json())
-app.get('/notes',auth,(req,res)=>{
+app.get('/notes',auth,async (req,res)=>{
     try{
-    req.user.populate('notes').execPopulate()
+    await req.user.populate('notes').execPopulate()
+
     res.send(req.user.notes)
 
     }
@@ -44,14 +45,16 @@ app.get('/notes/:id',(req,res)=>{
         res.send(note)
     }).catch((error)=>{res.send(error)})
 })
-
-app.delete('/notes/delete/:id',(req,res)=>{
+//delete notes
+app.delete('/notes/delete/:id',auth,(req,res)=>{  
 const _id=req.params.id;
-console.log(_id)
-res.send('success')
-Note.deleteOne({_id:_id}).then((note)=>{
+try{
+Note.deleteOne({_id:_id}, {owner:req.user._id}).then((note)=>{
     res.status(200).send('Deleted')
-}).catch((error)=>{res.send(error)})
-
+})
+}
+catch(e){
+  res.status(404).send()  
+}
 })
 module.exports=app
