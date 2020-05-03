@@ -27,8 +27,12 @@ function getuser() {
 
   fetch("/users/login", options)
     .then((response) => response.json())
-    .then((data) => console.log(data.token))
+    .then((data) => {
+    console.log(data.token)
+    window.location='/notespage'
+    })
     .catch((error) => {
       console.log("Error:", error);
     });
+
 }

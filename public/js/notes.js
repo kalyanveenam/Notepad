@@ -4,7 +4,7 @@ var btn_submit = document.getElementById("btn-addNote");
 const btn_getNotes = document.getElementById("btn-getNote");
 const div_notes = document.getElementById("div-msg");
 const btn_delete = document.getElementById("btn-delNote");
-const btn_refresh=document.getElementById('btn-refNote');
+const btn_refresh = document.getElementById("btn-refNote");
 Handlebars.registerHelper("data", function (property) {
   return property;
 });
@@ -29,16 +29,18 @@ btn_submit.addEventListener("click", function (e) {
     }
   });
 });
-
 btn_getNotes.addEventListener("click", function (e) {
   fetch("/notes", {
     method: "get",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWFlNTQxMTFkY2Q4ZTEzMTc3NjUwYTkiLCJpYXQiOjE1ODg0ODU3NjB9.4Ceahr6rTGo_jaev_dgZM6Ly_AWSU6RjFJ-xWvvjjQc",
     },
   })
     .then(function (data) {
       data.json().then((data) => {
+        console.log(data);
         var notes_data = {};
         notes_data.notes = data;
         var data = notes_data;
@@ -61,20 +63,18 @@ btn_getNotes.addEventListener("click", function (e) {
       console.log(error);
     });
 });
-function getIdOnClick(id) 
-{
-  console.log(id)
-  document.getElementById('div-dummy').innerHTML=id; 
-  
+function getIdOnClick(id) {
+  console.log(id);
+  document.getElementById("div-dummy").innerHTML = id;
 }
 document.getElementById("btn-delNote").addEventListener("click", function (e) {
-  const get_id=document.getElementById('div-dummy').innerHTML;
-  console.log('id:'+get_id)
+  const get_id = document.getElementById("div-dummy").innerHTML;
+  console.log("id:" + get_id);
   const data = {
     _id: get_id,
   };
-  const url ='/notes/delete/'+get_id
-  console.log(url)
+  const url = "/notes/delete/" + get_id;
+  console.log(url);
   fetch(url, {
     method: "delete",
     headers: {
@@ -83,9 +83,7 @@ document.getElementById("btn-delNote").addEventListener("click", function (e) {
     body: JSON.stringify(data),
   }).then((req, res) => {
     console.log("Note is deleted");
-  
   });
-
 });
 btn_refresh.addEventListener("click", function (e) {
   fetch("/notes", {
@@ -118,5 +116,3 @@ btn_refresh.addEventListener("click", function (e) {
       console.log(error);
     });
 });
-
-
