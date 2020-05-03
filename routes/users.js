@@ -36,6 +36,8 @@ app.post("/users/login", async (req, res) => {
 //create users
 app.post("/users", async (req, res) => {
   const reqbody = req.body;
+  console.log('------------------------')
+  console.log(reqbody)
   try {
     const user1 = new User(reqbody);
     await user1.save();
