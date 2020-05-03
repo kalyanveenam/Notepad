@@ -11,11 +11,13 @@ app.use(usersroutes)
 app.use(taskroutes)
 app.use('/static',express.static('public'))
 app.get('/',(req,res)=>{
-res.render('login')
-//res.sendFile(indexpath + 'index.html')
+res.sendFile(indexpath + 'login.html')
 })
 app.get('/notespage',(req,res)=>{
     res.sendFile(indexpath + 'note.html')
+})
+app.get('/signup',(req,res)=>{
+    res.sendFile(indexpath + 'signup.html')
 })
 
 app.listen('8000',console.log('app is up and running'))

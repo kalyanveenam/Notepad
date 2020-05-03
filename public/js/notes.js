@@ -39,6 +39,7 @@ btn_submit.addEventListener("click", function (e) {
     method: "post",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
+      Authorization: "Bearer "+tokendata
     },
     body: JSON.stringify(note),
   }).then(function (response) {
