@@ -3,6 +3,14 @@ const submit_button = document.getElementById("submit");
 const uname_button = document.getElementById("uname");
 const age_button = document.getElementById("age");
 
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 submit_button.addEventListener("click", getuser);
 
 function getuser() {
@@ -28,6 +36,8 @@ function getuser() {
   fetch("/users/login", options)
     .then((response) => response.json())
     .then((data) => {
+      setCookie('token',data.token,2)
+
     console.log(data.token)
     window.location='/notespage'
     })
@@ -36,3 +46,4 @@ function getuser() {
     });
 
 }
+

@@ -9,6 +9,25 @@ Handlebars.registerHelper("data", function (property) {
   return property;
 });
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+let tokendata = getCookie('token');
+console.log('token value-------->' + tokendata)
+
+
 btn_submit.addEventListener("click", function (e) {
   const title = input_title.value;
   const data = input_note.value;
@@ -35,7 +54,7 @@ btn_getNotes.addEventListener("click", function (e) {
     headers: {
       "Content-Type": "application/json;charset=utf-8",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWFlNTQxMTFkY2Q4ZTEzMTc3NjUwYTkiLCJpYXQiOjE1ODg0ODU3NjB9.4Ceahr6rTGo_jaev_dgZM6Ly_AWSU6RjFJ-xWvvjjQc",
+        "Bearer "+tokendata,
     },
   })
     .then(function (data) {
