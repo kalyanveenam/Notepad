@@ -11,7 +11,7 @@ app.use(usersroutes)
 app.use(taskroutes)
 app.use('/static',express.static('public'))
 app.get('/',(req,res)=>{
-res.sendFile(indexpath + 'login.html')
+res.sendFile(indexpath + 'home.html')
 })
 app.get('/notespage',(req,res)=>{
     res.sendFile(indexpath + 'note.html')

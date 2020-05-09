@@ -20,3 +20,6 @@ css:
 
 padding is boundary of that element
 display:block to block other elements in line
+
+margin property provides space around element
+
