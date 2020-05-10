@@ -3,8 +3,8 @@
   body{
       margin: 0;
       padding: 0;
-        background-color: rgb(26, 4, 4);
-  }
+      background-image: url(../img/title-3.jpg);
+      }
   .container{
       display: block;
       margin: 50px;
@@ -13,8 +13,8 @@
   .banner .card{
       background:#2c2c2c ;
       display: block;
-      box-shadow: 0px 3px 20px 2px rgb(32, 150, 110);
-      border: 2px solid green;
+      box-shadow: 0px 3px 20px 2px rgb(19, 48, 143);
+      border: 2px solid  rgb(19, 48, 143);
       border-radius: 10px;
 
   }
@@ -26,18 +26,19 @@ margin-bottom: 5px;
 padding-top: 50px;
 padding-left: 50px;
 padding-bottom: 0px;
-color: aquamarine;    
+color: rgb(255, 251, 251); 
   }
-  .banner .card .subheading{
-color: aquamarine;
+  .banner .card .subheading{  
+color:  rgba(199, 199, 196, 0.959);  
 font-size: 21px;
+font-family: fantasy;
 padding: 0px 50px 30px;
 
   }
   .banner .card button{
       padding: 50px;
       font-size: 20px;
-      color: aquamarine;
+      color: white;
       background: none;
       border: none;
       border-radius: 5px;
@@ -50,8 +51,8 @@ padding: 0px 50px 30px;
   .banner .card button:hover{
 
       cursor: pointer;
-      box-shadow: 0 3px 40px 5px #1a62e9; 
-      color: honeydew;
+      box-shadow: 0 3px 40px 5px yellow; 
+      color: yellow;
   }
   .row{
 display: block;
@@ -59,7 +60,13 @@ margin-top: 30px;
 
   }
   .paragraph{
+    font-size: 20px;
   float: left;
-  color: white;
+  color: rgb(87, 81, 81);
   width: 600px;
+
+  }
+  .paragraph:hover{
+    color: white;
+      font-family: fantasy;
   }
